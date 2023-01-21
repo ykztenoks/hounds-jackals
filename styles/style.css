@@ -4,25 +4,7 @@ body {
     margin: 0;
 	overflow: hidden;
   }
-  
-  .game-intro {
-    float: left;
-    padding: 0% 10%;
-  }
-  
-  .game-intro p {
-    font-size: 18px;
-    font-family: "Verdana"
-  }
-  
-  .logo-img {
-    width: 350px;
-  }
-  
-  .arrows-img {
-    width: 150px;
-  }
-  
+
   body button {
     font-size: 30px;
     background-color: #870007;
@@ -35,7 +17,8 @@ body {
   }
   
   #game-board {
-      float: left;
+      display: absolute;
+      align-items: center;
       padding: 20px 0px;
   }
   
