@@ -30,6 +30,10 @@ body {
     border: solid 1px black;
   }
 
+  p {
+    font-family: 'Explora', cursive;
+  }
+
   /* code for Game Title Introduction animation */
 
 
