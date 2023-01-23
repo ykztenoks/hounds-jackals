@@ -2,12 +2,12 @@ body {
     padding: 0;
     text-align: center;
     margin: 0;
-	overflow: hidden;
+	  overflow: hidden;
   }
 
   body button {
-    font-size: 30px;
-    background-color: #870007;
+    font-size: 26px;
+    background-color: darkslategray;
     color: #fff;
     padding: 20px 40px;
     border: 0;

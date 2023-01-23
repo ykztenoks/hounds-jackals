@@ -1,6 +1,9 @@
 const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext('2d')
 
+const gameboard = new Image()
+gameboard.src = ""
+
 // Game Introduction Title
 window.onload = init;
 
