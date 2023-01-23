@@ -1,19 +1,23 @@
+
+
 body {
     padding: 0;
     text-align: center;
     margin: 0;
 	  overflow: hidden;
+    background-color: #e8ceb0;
   }
 
-  body button {
-    font-size: 26px;
-    background-color: darkslategray;
-    color: #fff;
-    padding: 20px 40px;
-    border: 0;
-    box-shadow: 0;
-    border-radius: 5px;
-    margin-bottom: 20px;
+  #game-instructions {
+    display: flex;
+    float: left;
+    background-color: black;
+    color: goldenrod;
+    bottom: 0;
+    padding-bottom: 6px;
+    font-family: sans-serif;
+    width: 125px;
+    cursor: pointer;
   }
   
   #game-board {
@@ -28,13 +32,72 @@ body {
 
   /* code for Game Title Introduction animation */
 
-#instructions {
-	position: absolute;
-	color: #666;
-	bottom: 0;
-	padding-bottom: 6px;
-	font-family: sans-serif;
-	width: 100%;
-	text-align: center;
-	pointer-events: none;
+
+
+/* Start Coin Animation */
+#start-coin {
+   background-color: #e8ceb0;
+   display: flex;
+    float: left;
+    flex-direction: flex-start;
+    width: 200px;
+    padding: 35px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+    
+  }
+
+  #start-coin img {
+    width: 350;
+    height: 275px;
+    display: flex;
+    float: left;
+    flex-direction: flex-start;
+  }
+
+  .silver-heads,.silver-tails{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+.silver-tails {
+    transform: rotateX(180deg);
+}
+
+@keyframes spin-silver-tails{
+  0%{
+      transform: rotateX(0);
+  }
+  100%{
+      transform: rotateX(1980deg);
+  }
+}
+@keyframes spin-silver-heads{
+  0%{
+      transform: rotateX(0);
+  }
+  100%{
+      transform: rotateX(2160deg);
+  }
+}
+#flip-button{
+  display: flex;
+  flex-direction: column;
+  position: bottom;
+  width: 125px;
+  padding: 15px 0;
+  border: none;
+  font-size: 16px;
+  border-radius: 2.5px;
+  cursor: pointer;
+  background-color: black;
+  color: goldenrod;
 }

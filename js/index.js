@@ -92,7 +92,7 @@ function createTweenScrubber(tween, seekSpeed) {
 
 function createTextAnimation() {
   let geometry = generateTextGeometry('Hounds and Jackals', {
-    size:14,
+    size: 28,
     height:0,
     font:'droid sans',
     weight:'bold',
