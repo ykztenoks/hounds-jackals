@@ -14,7 +14,7 @@
       <!-- Code for Game Title animation -->
     <script>
         THREE.ShapeUtils.triangulateShape = (function () {
-                var pnlTriangulator = new PNLTRI.Triangulator();
+                let pnlTriangulator = new PNLTRI.Triangulator();
                 return function triangulateShape(contour, holes) {
                     return pnlTriangulator.triangulate_polygon([contour].concat(holes));
                 };
@@ -27,7 +27,7 @@
     </div>
 
       <!-- Instructions on how to Start, play, and win. -->
-      <div class ="playstartwin">
+      <div class ="startplaywin">
       <p>
         <h2 class="howtostart">
           To Start: Be the first to get Heads on the Silver coin to go first!
@@ -40,9 +40,10 @@
           • 3 heads and move 3 spaces
           • 3 tails and move 5 spaces <em>plus get an extra turn!</em>
           <br>
-          Be careful of the Cobras! 
-          Land on any of the Cobra tails and <strong>immediately</strong> you'll be moved to the cobra head!
-          Land on any of the Cobra heads and <strong>immediately</strong> you'll be moved to the Cobra tail!
+          Be careful of the Cobras! <br>
+          Land on any of the Cobra tails and <em>immediately</em> you'll be moved to the cobra head!
+          <br>
+          Land on any of the Cobra heads and <em>immediately</em> you'll be moved to the Cobra tail!
           <br>
           Land on space 15 or 25 and <em>take another turn!</em> 
           <br>
@@ -50,7 +51,7 @@
           Flip heads and you've added a new piece to the board. 
           Flip tails and you can not add a new piece to the board. 
           </h5>
-        <h4 class ="howtowin">How to win: Be the first to move all of your pieces to the Golden star at the end of the game!</h4>
+        <h4 class ="howtowin">How to win:<br>Be the first to move all of your pieces to the Golden star at the end of the game!</h4>
      </p>
     </div>
 

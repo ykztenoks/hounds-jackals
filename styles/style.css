@@ -2,7 +2,6 @@
 
 body {
     padding: 0;
-    text-align: center;
     margin: 0;
 	  overflow: hidden;
     background-color: #e8ceb0;
@@ -15,9 +14,10 @@ body {
     color: goldenrod;
     bottom: 0;
     padding-bottom: 6px;
-    font-family: sans-serif;
+    font-family: 'Explora', cursive;
     width: 125px;
     cursor: pointer;
+    font-size: 24px;
   }
   
   #game-board {
@@ -30,8 +30,17 @@ body {
     border: solid 1px black;
   }
 
-  p {
+  div p {
     font-family: 'Explora', cursive;
+    font-size: 26px;
+  }
+
+  p h2 {
+    font-weight: bolder;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    justify-content:left;
   }
 
   /* code for Game Title Introduction animation */
@@ -53,8 +62,8 @@ body {
     border-radius: 10px;
     -webkit-perspective: 300px;
     perspective: 300px;
-     position: relative;
-     transform-style: preserve-3d;
+    position: relative;
+    transform-style: preserve-3d;
     }
     
 
@@ -87,6 +96,24 @@ body {
     background-size: cover;
      display: block;
 }
+
+#flip-button {
+  display: flex;
+  flex-direction: row;
+  position: bottom;
+  width: 145px;
+  padding: 15px 0;
+  border: none;
+  border-radius: 2.5px;
+  cursor: pointer;
+  background-color: black;
+  color: goldenrod;
+  font-family: 'Explora', cursive;
+  font-size: 24px;
+  text-align: center;
+}
+
+
 #coin.animation900 {
   -webkit-animation: rotate900 3s linear forwards; 
   animation: rotate900 3s linear forwards;
@@ -206,17 +233,4 @@ body {
   from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
   to { -webkit-transform: rotateY(2160deg); -moz-transform: rotateY(2160deg); transform: rotateY(2160deg); }
   }
-#flip-button{
-  display: flex;
-  flex-direction: column;
-  position: bottom;
-  width: 125px;
-  padding: 15px 0;
-  border: none;
-  font-size: 16px;
-  border-radius: 2.5px;
-  cursor: pointer;
-  background-color: black;
-  color: goldenrod;
-}
 
