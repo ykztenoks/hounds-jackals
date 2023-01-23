@@ -4,6 +4,35 @@ const ctx = canvas.getContext('2d')
 const gameboard = new Image() // gameboard 
 gameboard.src = "./src/HJGameBoard.png"
 
+const houndsGP = new Image() // Hounds game piece 
+houndsGP.src ="./src/Houndgamepiece.png"
+
+const jackalsGP = new Image() //Jackals game pieces
+jackalsGP.src ="./src/jackalgamepiece.png"
+
+//Start Coin animation & code 
+
+jQuery(document).ready(function($){
+
+  let spinArray = ['animation900','animation1080','animation1260','animation1440','animation1620','animation1800','animation1980','animation2160'];
+  
+  function getSpin() {
+  let spin = spinArray[Math.floor(Math.random()*spinArray.length)];
+  return spin;
+  }
+  
+  $('#start-coin').on('click', function(){
+  
+  $('#start-coin').removeClass();
+  
+  setTimeout(function(){
+  $('#start-coin').addClass(getSpin());
+  }, 100);
+  
+  });
+  
+  });
+
 // Game Title Animation
 window.onload = init;
 
@@ -308,3 +337,5 @@ let utils = {
     return dst;
   }
 };
+
+
