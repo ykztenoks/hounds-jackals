@@ -1,10 +1,10 @@
 const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext('2d')
 
-const gameboard = new Image()
-gameboard.src = ""
+const gameboard = new Image() // gameboard 
+gameboard.src = "./src/HJGameBoard.png"
 
-// Game Introduction Title
+// Game Title Animation
 window.onload = init;
 
 function init() {
