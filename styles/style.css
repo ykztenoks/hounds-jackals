@@ -3,14 +3,13 @@
 body {
     padding: 0;
     margin: 0;
-	  overflow: hidden;
-    background-color: #e8ceb0;
-    text-align: left;
+	  background-color: #e8ceb0;
+    
   }
 
   #game-instructions {
     display: flex;
-    float: left;
+    position: left;
     background-color: black;
     color: goldenrod;
     bottom: 0;
@@ -23,15 +22,19 @@ body {
     margin-bottom: 20px;
   }
 
-  /* #game-board {
-      position: absolute;
-      align-items: center;
+  #game-board {
+      /* position: absolute; */
+      display: block;
+      justify-content: center;
+     
       
-    } */
+    }
   
     canvas {
       border: 2px solid black;
       visibility:hidden;
+      display: none;
+      margin-left: 300px;
     }
 
   /* div p {
@@ -48,20 +51,95 @@ body {
   } */
 
   #startplaywin {
-    display: block;
+    display: none;
+    visibility: hidden;
     flex-wrap: wrap;
     font-weight: bolder;
-    display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
     justify-content:left;
     flex-direction: column;
     font-family: 'Explora', cursive;
-
+    font-size: 26px;
+    
   }
 
  /* Start Coin Animation */
-/*#start-coin {
+
+ /* #coin-flip-cont {
+  margin: auto;
+  display:flex;
+  flex-direction: column;
+  align-items: right;
+ } */
+
+ #flip-button {
+  width: 145px;
+  padding: 1 rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: black;
+  color: goldenrod;
+  font-family: 'Explora', cursive;
+  font-size: 24px;
+  text-align: center;
+}  
+
+#coin {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  margin: 2rem 0rem;
+  transform-style: preserve-3d;
+}
+
+#coin div{
+  width:100%;
+  height: 100%;
+  border-radius:50%;
+  backface-visibility: hidden;
+  background-size: contain;
+  position: absolute;
+}
+.front {
+  background-image: url(./Images/coin-head-silver.png);
+
+}
+
+.animate-front {
+  animation: flipHeads 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flipHeads {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(1800deg);
+  }
+}
+
+.back {
+  background-image: url(./Images/coin-tail-silver.png);
+  transform: rotateY(-1800deg);
+}
+
+.animate-tails {
+  animation: flipTails 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flipTails {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(1620deg);
+  }
+}
+/* #start-coin {
    background-color: #e8ceb0;
    display: flex;
     float: left;
@@ -108,23 +186,49 @@ body {
     background-image: url(./coin-tail-silver.png);
     background-size: cover;
      display: block;
-}
+} */
 
-#flip-button {
-  display: flex;
-  flex-direction: row;
-  position: bottom;
-  width: 145px;
-  padding: 15px 0;
-  border: none;
-  border-radius: 2.5px;
-  cursor: pointer;
-  background-color: black;
-  color: goldenrod;
-  font-family: 'Explora', cursive;
-  font-size: 24px;
-  text-align: center;
-}
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  }
+  
+  #coin-flip-cont {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  }
+  
+  #coin {
+  position: relative;
+  width: 200px;
+  transform-style: preserve-3d;
+  }
+  
+  #coin .front, #coin .back {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  }
+  
+  #coin .front {
+    transform: translateZ(1px);
+    border-radius: 50%;
+    background-image: url(./src/coin-head-silver);
+    background-size: cover;
+    display: block;
+  }
+  
+  #coin .back {
+    transform: translateZ(-1px) rotateY(180deg);
+    border-radius: 50%;
+    background-image: url(./src/coin-tail-silver);
+     background-size: cover;
+     display: block;
+  }
 
 
 #coin.animation900 {

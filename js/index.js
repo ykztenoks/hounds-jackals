@@ -12,16 +12,37 @@ houndsGP.src ="./src/Houndgamepiece.png"
 const jackalsGP = new Image() //Jackals game pieces
 jackalsGP.src ="./src/jackalgamepiece.png"
 
-// let startGame
-// let animationLoopId
+const coin = document.querySelector(`#coin`);
+const button = document.querySelector(`#flip-button`);
+const result = document.querySelector(`#result`);
 
-// let gameOn = false
 
 //ctx.drawImage(gameboard, 0, 0, 800, 800)
 
 //Start Coin animation & code 
 
-// jQuery(document).ready(function($){
+function deferFn(callback, ms) {
+  setTimeout (callback, ms);
+}
+
+function processResult(result) {
+  result.innerText = result.toUpperCase ();
+}
+
+function flipCoin() {
+  coin.setAttribute(`class`, '');
+  console.log("flipping")
+  const random = Math.random();
+  const result = random < 0.5 ? 'heads' : 'tails';
+  deferFn (function() {
+    coin.setAttribute(`class`, `animate-` + result);
+    deferFn(processResult.bind(null, result), 2900)
+  }, 100);
+}
+
+button.addEventListener(`click`, flipCoin)
+
+// document.getElementById("#coin-flip-cont").onclick = function() {
 
 //   let spinArray = ['animation900','animation1080','animation1260','animation1440','animation1620','animation1800','animation1980','animation2160'];
   
@@ -40,37 +61,43 @@ jackalsGP.src ="./src/jackalgamepiece.png"
   
 //   });
   
-//   });
+//   };
 
   // window.onload = function() {
   //   document.getElementById("start-coin").onclick = function() {
   //     startGame();
   //   };
   // };
-
-  // function startGame() {
-
-  //   console.log("Starting")
-  //   logo.style.visibility = "hidden"
-  //   logo.style.height = "0px"
-  //   canvas.width = "800"
-  //   canvas.height = "800"
-  //   canvas.style.visibility = "visible"
-  
-  //   ctx.drawImage(gameboard, 0, 0, 800, 800)
-  
-    // // ctx.drawImage(fabyImage, 400, 200, 75, 50)
+ 
+    
     // animationLoop()
     // generatePipes()
   
   //}
+
+    function startGame() {
+      document.getElementById("startplaywin").style.display = "flex"
+    console.log("Starting")
+    document.getElementById("startplaywin").style.visibility = "visible"
+    //logo.style.visibility = "hidden"
+    //logo.style.height = "0px"
+    canvas.width = "800"
+    canvas.height = "750"
+    canvas.style.visibility = "visible"
+    canvas.style.display = "inherit"
+  
+    ctx.drawImage(gameboard, 0, 0, 800, 800)
+}
+
   window.onload = function() {
     document.getElementById("game-instructions").onclick = function() {
-
+      console.log("hitting button")
       ctx.drawImage(gameboard, 0, 0, 800, 800,)
-      
       startGame();
     };
+    // document.getElementById("startplaywin").onclick = function () {
+
+    
   };
   // // for moving game pieces after gold coins animate
   // document.addEventListener('keydown', e => {

@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="styles/style.css" />
     <title>Hounds and Jackals Game</title>
-   <link href="https://fonts.googleapis.com/css2?family=Explora&display=swap" rel="stylesheet" type="text/css" media="screen">
+   <link href="https://fonts.googleapis.com/css2?family=Explora&display=swap" rel="stylesheet" media="screen">
   </head>
   <body>
-
+<!-- code for the Hounds and Jackals game board  -->
     <div id="wrapper">
       <div id="gamecontainer">
-        <canvas id="gameboard" width="800" height="800" class="HJgameboard">
+        <canvas id="gameboard" width="0" height="0" class="HJgameboard">
 
         </canvas>
       </div>
@@ -20,49 +20,56 @@
         <!-- How to Play Button -->
     
       <button id ="game-instructions"> How to Play </button> 
-    
+
+      <div id="coin-flip-cont">
+        <div id="coin">
+        <div class="front"></div>
+        <div class="back"></div>
+        </div>
+        </div>
+        <button id="flip-button">Who goes first?</button>
+        <p><span id="result"></span></p>
 
       <!-- Instructions on how to Start, play, and win. -->
-      <!-- <div class ="startplaywin">
-      <p>
-        <h2 class="howtostart">
-          To Start: Be the first to get Heads on the Silver coin to go first!
-        </h2> 
-        <h5 class="howtoplay">How to Play:
-          <br>
-          Flip the three Golden Coins to see how many spaces you move!
-          • 1 head and move 1 space
-          • 2 heads and move 2 spaces
-          • 3 heads and move 3 spaces
-          • 3 tails and move 5 spaces <em>plus get an extra turn!</em>
-          <br>
-          Be careful of the Cobras! <br>
-          Land on any of the Cobra tails and <em>immediately</em> you'll be moved to the cobra head!
-          <br>
-          Land on any of the Cobra heads and <em>immediately</em> you'll be moved to the Cobra tail!
-          <br>
-          Land on space 15 or 25 and <em>take another turn!</em> 
-          <br>
-          At the start of every turn, if your piece is not on the start space, you can flip the <strong>Silver Coin</strong> to get another piece onto the board.
-          Flip heads and you've added a new piece to the board. 
-          Flip tails and you can not add a new piece to the board. 
-          You have to wait and try again your next turn. 
-          </h5>
-        <h4 class ="howtowin">How to win:<br>Be the first to move all of your pieces to the Golden star at the end of the game!</h4>
-     </p>
-    </div> -->
+      <div id="startplaywin">
+        <p>
+          <h2 class="howtostart">
+            To Start: Be the first to get Heads on the Silver coin to go first!
+          </h2> 
+          <h2 class="howtoplay">How to Play:
+            <br>
+            Flip the three Golden Coins to see how many spaces you move!
+            • 1 head and move 1 space
+            • 2 heads and move 2 spaces
+            • 3 heads and move 3 spaces
+            • 3 tails and move 5 spaces <em>plus get an extra turn!</em>
+            <br>
+            Be careful of the Cobras! <br>
+            Land on any of the Cobra tails and <em>immediately</em> you'll be moved to the cobra head!
+            <br>
+            Land on any of the Cobra heads and <em>immediately</em> you'll be moved to the Cobra tail!
+            <br>
+            Land on space 15 or 25 and <em>take another turn!</em> 
+            <br>
+            At the start of every turn, if your piece is not on the start space, you can flip the <strong>Silver Coin</strong> to get another piece onto the board.
+            Flip heads and you've added a new piece to the board. 
+            Flip tails and you can not add a new piece to the board. 
+            You have to wait and try again your next turn. 
+            </h2>
+          <h2 class ="howtowin">How to win:<br>Be the first to move all of your pieces to the Golden star at the end of the game!</h2>
+        </p>
+    </div>
 
 
     <!-- Code for Silver Coin. that starts the game.  -->
      <!-- <div id="start-coin">
        <img src="./src/coin-head-silver.png" alt="silver coin heads" class ="silver-heads"/>
        <img src ="./src/coin-tail-silver.png" alt="silver coin tail" class ="silver-tails"/>
-       <button id="flip-button">Who goes first?</button>
+       
        <div id="result"></div>
     </div> -->
-<!-- code for the Hounds and Jackals game board  -->
     
 
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
   </body>
 </html>
