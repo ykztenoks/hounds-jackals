@@ -6,28 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="styles/style.css" />
     <title>Hounds and Jackals Game</title>
-   <link href="https://fonts.googleapis.com/css2?family=Explora&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Explora&display=swap" rel="stylesheet" type="text/css" media="screen">
   </head>
   <body>
-    <div class="game-intro">
-        
-      <!-- Code for Game Title animation -->
-    <script>
-        THREE.ShapeUtils.triangulateShape = (function () {
-                let pnlTriangulator = new PNLTRI.Triangulator();
-                return function triangulateShape(contour, holes) {
-                    return pnlTriangulator.triangulate_polygon([contour].concat(holes));
-                };
-            })();
-    </script>
+
+    <div id="wrapper">
+      <div id="gamecontainer">
+        <canvas id="gameboard" width="800" height="800" class="HJgameboard">
+
+        </canvas>
+      </div>
     </div>
-    <!-- How to Play Button -->
-    <div id="button-instructions">
+        <!-- How to Play Button -->
+    
       <button id ="game-instructions"> How to Play </button> 
-    </div>
+    
 
       <!-- Instructions on how to Start, play, and win. -->
-      <div class ="startplaywin">
+      <!-- <div class ="startplaywin">
       <p>
         <h2 class="howtostart">
           To Start: Be the first to get Heads on the Silver coin to go first!
@@ -50,24 +46,22 @@
           At the start of every turn, if your piece is not on the start space, you can flip the <strong>Silver Coin</strong> to get another piece onto the board.
           Flip heads and you've added a new piece to the board. 
           Flip tails and you can not add a new piece to the board. 
+          You have to wait and try again your next turn. 
           </h5>
         <h4 class ="howtowin">How to win:<br>Be the first to move all of your pieces to the Golden star at the end of the game!</h4>
      </p>
-    </div>
+    </div> -->
 
 
     <!-- Code for Silver Coin. that starts the game.  -->
-     <div id="start-coin">
+     <!-- <div id="start-coin">
        <img src="./src/coin-head-silver.png" alt="silver coin heads" class ="silver-heads"/>
        <img src ="./src/coin-tail-silver.png" alt="silver coin tail" class ="silver-tails"/>
        <button id="flip-button">Who goes first?</button>
        <div id="result"></div>
-    </div>
+    </div> -->
 <!-- code for the Hounds and Jackals game board  -->
-    <div id="game-board">
-      <canvas id="canvas" width="800" height="800"></canvas>
-    </div>
-
+    
 
     <script type="text/javascript" src="js/index.js"></script>
   </body>

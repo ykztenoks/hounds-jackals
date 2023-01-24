@@ -5,6 +5,7 @@ body {
     margin: 0;
 	  overflow: hidden;
     background-color: #e8ceb0;
+    text-align: left;
   }
 
   #game-instructions {
@@ -13,42 +14,54 @@ body {
     background-color: black;
     color: goldenrod;
     bottom: 0;
-    padding-bottom: 6px;
+    padding: 10px 20px;
     font-family: 'Explora', cursive;
     width: 125px;
     cursor: pointer;
     font-size: 24px;
-  }
-  
-  #game-board {
-      position: relative;
-      align-items: center;
-      padding: 20px 0px;
-  }
-  
-  canvas {
-    border: solid 1px black;
+    border-radius: 5px;
+    margin-bottom: 20px;
   }
 
-  div p {
+  /* #game-board {
+      position: absolute;
+      align-items: center;
+      
+    } */
+  
+    canvas {
+      border: 2px solid black;
+      visibility:hidden;
+    }
+
+  /* div p {
     font-family: 'Explora', cursive;
     font-size: 26px;
-  }
+  } */
 
-  p h2 {
+  /* p h2 {
     font-weight: bolder;
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
     justify-content:left;
+  } */
+
+  #startplaywin {
+    display: block;
+    flex-wrap: wrap;
+    font-weight: bolder;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    justify-content:left;
+    flex-direction: column;
+    font-family: 'Explora', cursive;
+
   }
 
-  /* code for Game Title Introduction animation */
-
-
-
-/* Start Coin Animation */
-#start-coin {
+ /* Start Coin Animation */
+/*#start-coin {
    background-color: #e8ceb0;
    display: flex;
     float: left;
