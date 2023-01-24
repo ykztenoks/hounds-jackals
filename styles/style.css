@@ -4,6 +4,8 @@ body {
     padding: 0;
     margin: 0;
 	  background-color: #e8ceb0;
+    width: 100%;
+    height: 100%;
     
   }
 
@@ -103,7 +105,7 @@ body {
   position: absolute;
 }
 .front {
-  background-image: url(./Images/coin-head-silver.png);
+  background-image: url(./images/coin-head-silver);
 
 }
 
@@ -122,7 +124,7 @@ body {
 }
 
 .back {
-  background-image: url(./Images/coin-tail-silver.png);
+  background-image: url(./images/coin-tail-silver.png);
   transform: rotateY(-1800deg);
 }
 
@@ -187,13 +189,7 @@ body {
     background-size: cover;
      display: block;
 } */
-
-html, body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  }
-  
+/*
   #coin-flip-cont {
   width: 200px;
   height: 200px;
@@ -349,5 +345,5 @@ html, body {
   @keyframes rotate2160 {
   from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
   to { -webkit-transform: rotateY(2160deg); -moz-transform: rotateY(2160deg); transform: rotateY(2160deg); }
-  }
+  }*/
 

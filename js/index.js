@@ -40,7 +40,7 @@ function flipCoin() {
   }, 100);
 }
 
-button.addEventListener(`click`, flipCoin)
+
 
 // document.getElementById("#coin-flip-cont").onclick = function() {
 
@@ -99,6 +99,8 @@ button.addEventListener(`click`, flipCoin)
 
     
   };
+
+  button.addEventListener(`click`, flipCoin)
   // // for moving game pieces after gold coins animate
   // document.addEventListener('keydown', e => {
 
