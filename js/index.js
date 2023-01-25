@@ -40,7 +40,14 @@ function flipCoin() {
   }, 100);
 }
 
+//Codes for game play using boardgame.io
 
+import { Client } from 'boardgame.io/client';
+
+const client = Client ({
+  game : game, 
+  numPlayers: 2, 
+})
 
 // document.getElementById("#coin-flip-cont").onclick = function() {
 
