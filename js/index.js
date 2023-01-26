@@ -2,249 +2,6 @@ const canvas = document.getElementById("gameboard");
 const ctx = canvas.getContext("2d");
 
 //const logo = new Image() // logo
-// cordinates for white spots/hounds
-const whiteCords = [
-  {},
-  {
-    x: 310,
-    y: 290,
-  },
-  {
-    x: 310,
-    y: 320,
-  },
-  {
-    x: 310,
-    y: 360,
-  },
-  {
-    x: 310,
-    y: 400,
-  },
-  {
-    x: 310,
-    y: 440,
-  },
-  {
-    x: 310,
-    y: 480,
-  },
-  {
-    x: 310,
-    y: 520,
-  },
-  {
-    x: 310,
-    y: 560,
-  },
-  {
-    x: 310,
-    y: 600,
-  },
-  {
-    x: 310,
-    y: 630,
-  },
-
-  {
-    x: 140,
-    y: 630,
-  },
-  {
-    x: 140,
-    y: 590,
-  },
-  {
-    x: 140,
-    y: 550,
-  },
-  {
-    x: 140,
-    y: 510,
-  },
-  {
-    x: 140,
-    y: 470,
-  },
-  {
-    x: 140,
-    y: 430,
-  },
-  {
-    x: 140,
-    y: 395,
-  },
-  {
-    x: 140,
-    y: 360,
-  },
-  {
-    x: 140,
-    y: 320,
-  },
-  {
-    x: 140,
-    y: 300,
-  },
-  {
-    x: 140,
-    y: 250,
-  },
-  {
-    x: 140,
-    y: 210,
-  },
-  {
-    x: 140,
-    y: 180,
-  },
-  {
-    x: 140,
-    y: 140,
-  },
-  {
-    x: 140,
-    y: 90,
-  },
-  {
-    x: 140,
-    y: 60,
-  },
-  {
-    x: 180,
-    y: 60,
-  },
-  {
-    x: 230,
-    y: 60,
-  },
-  {
-    x: 280,
-    y: 60,
-  },
-];
-
-//cordinates for black spots/jackals
-const blackCords = [
-  {},
-  {
-    x: 430,
-    y: 290,
-  },
-  {
-    x: 430,
-    y: 320,
-  },
-  {
-    x: 430,
-    y: 360,
-  },
-  {
-    x: 430,
-    y: 400,
-  },
-  {
-    x: 430,
-    y: 440,
-  },
-  {
-    x: 430,
-    y: 480,
-  },
-  {
-    x: 430,
-    y: 520,
-  },
-  {
-    x: 430,
-    y: 560,
-  },
-  {
-    x: 430,
-    y: 600,
-  },
-  {
-    x: 430,
-    y: 630,
-  },
-
-  {
-    x: 600,
-    y: 630,
-  },
-  {
-    x: 600,
-    y: 590,
-  },
-  {
-    x: 600,
-    y: 550,
-  },
-  {
-    x: 600,
-    y: 510,
-  },
-  {
-    x: 600,
-    y: 470,
-  },
-  {
-    x: 600,
-    y: 430,
-  },
-  {
-    x: 600,
-    y: 395,
-  },
-  {
-    x: 600,
-    y: 360,
-  },
-  {
-    x: 600,
-    y: 320,
-  },
-  {
-    x: 600,
-    y: 300,
-  },
-  {
-    x: 600,
-    y: 250,
-  },
-  {
-    x: 600,
-    y: 210,
-  },
-  {
-    x: 600,
-    y: 180,
-  },
-  {
-    x: 600,
-    y: 600,
-  },
-  {
-    x: 600,
-    y: 90,
-  },
-  {
-    x: 600,
-    y: 60,
-  },
-  {
-    x: 560,
-    y: 60,
-  },
-  {
-    x: 510,
-    y: 60,
-  },
-  {
-    x: 460,
-    y: 60,
-  },
-];
 
 // how many moves in the current round
 let currentMove;
@@ -288,6 +45,7 @@ const jackalsGP = new Image(); //Jackals game pieces
 jackalsGP.src = "../src/jackalgamepiece.png";
 
 //capturing HTML elements
+const log = document.querySelector(".log");
 const flipCoinMove = document.querySelector("#flip-moves");
 const coin = document.querySelector(`#coin`);
 const button = document.querySelector(`#flip-button`);
@@ -389,19 +147,24 @@ function checkForMoves() {
 
   if (heads.length === 3) {
     currentMove = moves[0].moves;
+    log.innerHTML = `<h3>3 Heads! ${playing.name} got ${currentMove} moves.</h3>`;
   }
   if (heads.length === 2) {
     currentMove = moves[1].moves;
+    log.innerHTML = `<h3>2 Heads! ${playing.name} got ${currentMove} moves.</h3>`;
   }
   if (heads.length === 1) {
     currentMove = moves[2].moves;
+    log.innerHTML = `<h3> Heads! ${playing.name} got ${currentMove} moves.</h3>`;
   }
   if (tails.length === 3) {
+    log.innerHTML = `<h3>WOW, 3 Tails! ${playing.name} got ${currentMove} moves.</h3>`;
+
     currentMove = moves[3].moves;
   }
   console.log("💃", currentMove);
   console.log("💻", playing);
-  // ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   flipCoinMove.disabled = true;
   setTimeout(() => {
     flipCoinMove.disabled = false;
@@ -410,35 +173,41 @@ function checkForMoves() {
     coinMove3.src = "";
   }, 1500);
   if (playing.name === "hounds") {
+    let newHPos = playing.currentPosition + currentMove;
     ctx.clearRect(playing.x, playing.y, playing.width, playing.height);
 
     ctx.drawImage(
       playing.image,
-      whiteCords[playing.currentPosition + currentMove].x,
-      whiteCords[playing.currentPosition + currentMove].y,
+      whiteCords[newHPos].x,
+      whiteCords[newHPos].y,
       80,
       80
     );
     playing.currentPosition += currentMove;
     console.log(playing.currentPosition);
 
+    hounds.y = whiteCords[newHPos].y;
+    hounds.x = whiteCords[newHPos].x;
     playing = jackals;
     console.log(playing);
     return;
   }
   if (playing.name === "jackals") {
+    let newJPos = (playing.currentPosition += currentMove);
     ctx.clearRect(playing.x, playing.y, playing.width, playing.height);
     ctx.drawImage(
       playing.image,
-      blackCords[playing.currentPosition + currentMove].x,
-      blackCords[playing.currentPosition + currentMove].y,
+      blackCords[newJPos].x,
+      blackCords[newJPos].y,
       playing.width,
       playing.height
     );
-    playing.currentPosition += currentMove;
+    jackals.x = blackCords[newJPos].x;
+    jackals.y = blackCords[newJPos].y;
     console.log(playing.currentPosition);
 
     if (playing.currentPosition === 6 && playing.name === "jackals") {
+      // update();
       ctx.drawImage(
         playing.image,
         blackCords[20].x,
@@ -448,6 +217,7 @@ function checkForMoves() {
       );
     }
     if (playing.currentPosition === 6 && playing.name === "hounds") {
+      // update();
       ctx.drawImage(
         playing.image,
         whiteCords[20].x,
@@ -462,8 +232,6 @@ function checkForMoves() {
   }
 }
 
-//Codes for game play using boardgame.io
-
 function startGame() {
   document.getElementById("startplaywin").style.display = "flex";
   console.log("Starting");
@@ -474,14 +242,27 @@ function startGame() {
   canvas.height = "750";
   canvas.style.visibility = "visible";
   canvas.style.display = "inherit";
+}
 
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(gameboard, 0, 0, 800, 800);
+  ctx.drawImage(
+    jackals.image,
+    jackals.x,
+    jackals.y,
+    jackals.width,
+    jackals.height
+  );
+  ctx.drawImage(hounds.image, hounds.x, hounds.y, hounds.width, hounds.height);
+
+  requestAnimationFrame(animate);
 }
 
 window.onload = function () {
+  animate();
   document.getElementById("game-instructions").onclick = function () {
     console.log("hitting button");
-    ctx.drawImage(gameboard, 0, 0, 800, 800);
     startGame();
   };
 };
